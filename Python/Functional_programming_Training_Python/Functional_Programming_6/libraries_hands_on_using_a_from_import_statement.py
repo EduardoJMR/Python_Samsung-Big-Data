@@ -1,0 +1,3 @@
+from libraries_hands_on_using_an_import_statement import loadfile
+mylist= libraries_hands_on_using_an_import_statement.loadfile('loudacre.log')
+print mylist

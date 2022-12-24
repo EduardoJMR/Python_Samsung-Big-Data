@@ -2,21 +2,21 @@
 
 ## HDFS
 
-#### Write Once, Read Many times (WORM).
-#### Divide files into big blocks and distribute across the cluster.
-#### Store multiple replicas of each block for reliability.
-#### Programs can ask "where do the pieces of my file live?”.
+##### Write Once, Read Many times (WORM).
+##### Divide files into big blocks and distribute across the cluster.
+##### Store multiple replicas of each block for reliability.
+##### Programs can ask "where do the pieces of my file live?”.
 
 ## HDFS Components
 
 ### NameNode
-#### Is the master service of HDFS. 
-#### Determines and maintains how the chunks of data are distributed across the DataNodes. 
+##### Is the master service of HDFS. 
+##### Determines and maintains how the chunks of data are distributed across the DataNodes. 
 ### DataNode
-#### Stores the chunks of data, and is responsible for replicating the chunks across other DataNodes.
-#### The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
+##### Stores the chunks of data, and is responsible for replicating the chunks across other DataNodes.
+##### The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
 ### The HDFS NameNodeis a single point of failure:
-#### The entire cluster is unavailable if the NameNode:
+##### The entire cluster is unavailable if the NameNode:
 ##### Fails or becomes unreachable.
 ##### Is stopped to perform maintenance.
 ### NameNodeHA:

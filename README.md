@@ -2,7 +2,7 @@
 
 ## HDFS
 
-![What is HDFS?](https://www.researchgate.net/publication/348387085/figure/fig4/AS:981518453309440@1611023643650/The-overview-of-the-Hadoop-Distributed-File-System-HDFS.ppm)
+![What is HDFS?](https://d12i7q49526cmu.cloudfront.net/media/images/hadoop.2e16d0ba.fill-546x416.png)
 
 * Write Once, Read Many times (WORM).
 * Divide files into big blocks and distribute across the cluster.

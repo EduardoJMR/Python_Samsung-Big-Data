@@ -32,6 +32,8 @@
 
 ## YARN Resource Management
 
+![What is YARN?](https://cdn.educba.com/academy/wp-content/uploads/2019/09/Hadoop-YARN-Architecture-1-1.png)
+
 * Yet Another Resource Negotiator
 * Architectural center of Enterprise Hadoop
 * Provides centralized resource management and job scheduling across multiple types of processing workloads
@@ -51,6 +53,8 @@
 * E.g. MapReduce Application Master
 
 ## Resilient Distributed Datasets (RDDs)
+
+![What are RDDs?](https://www.edureka.co/blog/wp-content/uploads/2019/03/RDD-Multiple-Partitions-RDD-using-Spark-528x235.png)
 
 #### RDDs are part of core Spark
 * Resilient Distributed Dataset (RDD)
@@ -75,6 +79,8 @@
 
 ## DataFrames and Datasets
 
+![What are DataFrames and Datasets?](https://cdn.analyticsvidhya.com/wp-content/uploads/2020/10/Screenshot-from-2020-10-18-11-38-13.png)
+
 #### DataFrames and Datasets are the primary representation of data in Spark. 
 #### DataFrames represent structured data in a tabular form.
 * DataFrames model data similar to tables in an RDBMS. 
@@ -95,6 +101,8 @@
 * Use transformations to create a new DataFrame with the data you need
 
 ## Apache Hive
+
+![What is Apache Hive?](https://bigdatadummy.files.wordpress.com/2017/01/hive-logo.png)
 
 #### SQL Semantic Layer on Hadoop
 #### “De facto SQL Interface” for Hadoop
@@ -117,6 +125,8 @@
 ##### SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 
 ## Message Processing with Apache Kafka
+
+![What is Apache Kafka?](https://miro.medium.com/max/800/1*uSxWTy13MKgbvOGKqxdkgQ.png)
 
 #### Apache Kafka is a distributed commit log service
 * Widely used for data ingest

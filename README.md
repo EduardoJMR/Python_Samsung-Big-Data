@@ -3,94 +3,94 @@
 ## HDFS
 
 * Write Once, Read Many times (WORM).
-##### Divide files into big blocks and distribute across the cluster.
-##### Store multiple replicas of each block for reliability.
-##### Programs can ask "where do the pieces of my file live?”.
+* Divide files into big blocks and distribute across the cluster.
+* Store multiple replicas of each block for reliability.
+* Programs can ask "where do the pieces of my file live?”.
 
 ## HDFS Components
 
 ### NameNode
-##### Is the master service of HDFS. 
-##### Determines and maintains how the chunks of data are distributed across the DataNodes. 
+* Is the master service of HDFS. 
+* Determines and maintains how the chunks of data are distributed across the DataNodes. 
 ### DataNode
-##### Stores the chunks of data, and is responsible for replicating the chunks across other DataNodes.
-##### The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
+* Stores the chunks of data, and is responsible for replicating the chunks across other DataNodes.
+* The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
 ### The HDFS NameNodeis a single point of failure:
-##### The entire cluster is unavailable if the NameNode:
-##### Fails or becomes unreachable.
-##### Is stopped to perform maintenance.
+* The entire cluster is unavailable if the NameNode:
+* Fails or becomes unreachable.
+* Is stopped to perform maintenance.
 ### NameNodeHA:
-##### Uses a redundant NameNode
-##### Is configured in an Active/Standby configuration
-##### Enables fast failover in response to NameNodefailure
-##### Permits administrator-initiated failover for maintenance
-##### Is configured by Cloudera Manager
+* Uses a redundant NameNode
+* Is configured in an Active/Standby configuration
+* Enables fast failover in response to NameNodefailure
+* Permits administrator-initiated failover for maintenance
+* Is configured by Cloudera Manager
 ## HDFS Architecture
-##### The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
+* The NameNode(master node) and DataNodes(worker nodes) are daemons running in a Java virtual machine.
 
 ## YARN Resource Management
 
-##### Yet Another Resource Negotiator
-##### Architectural center of Enterprise Hadoop
-##### Provides centralized resource management and job scheduling across multiple types of processing workloads
-##### Enables multi tenancy
+* Yet Another Resource Negotiator
+* Architectural center of Enterprise Hadoop
+* Provides centralized resource management and job scheduling across multiple types of processing workloads
+* Enables multi tenancy
 
 ### YARN Architectural Components 
 #### Resource Manager
-##### Global resource scheduler
-##### Hierarchical queues
+* Global resource scheduler
+* Hierarchical queues
 #### Node Manager
-##### Per-machine agent
-##### Manages the life-cycle of container
-##### Container resource monitoring
+* Per-machine agent
+* Manages the life-cycle of container
+* Container resource monitoring
 #### Application Master
-##### Per-application
-##### Manages application scheduling and task execution
-##### E.g. MapReduce Application Master
+* Per-application
+* Manages application scheduling and task execution
+* E.g. MapReduce Application Master
 
 ## Resilient Distributed Datasets (RDDs)
 
 #### RDDs are part of core Spark
-##### Resilient Distributed Dataset (RDD)
-##### Resilient: if data in memory is lost, it can be recreated
-##### Distributed: Processed across the cluster
-##### Dataset: Initial data can come from a source such as a file, or it can be created programmatically
+* Resilient Distributed Dataset (RDD)
+* Resilient: if data in memory is lost, it can be recreated
+* Distributed: Processed across the cluster
+* Dataset: Initial data can come from a source such as a file, or it can be created programmatically
 ### All Transformations are Lazy
 #### Spark doesn't immediately compute results
-##### Transformations stored as a graph (DAG) from a base RDD
-##### Consider an RDD to be a set of operations
-##### It's not really a container for specific data
+* Transformations stored as a graph (DAG) from a base RDD
+* Consider an RDD to be a set of operations
+* It's not really a container for specific data
 #### The DAG is executed when an action occurs
-##### When it needs to provide data
+* When it needs to provide data
 #### Allows Spark to:
-##### Optimize required calculations (we'll view this soon)
-##### Efficiently recover RDDs on node failure (more on this later)
+* Optimize required calculations (we'll view this soon)
+* Efficiently recover RDDs on node failure (more on this later)
 #### Fault Tolerance
 #### Spark tracks transformations that create an RDD
-##### Lineage: The series of transformations producing an RDD
+* Lineage: The series of transformations producing an RDD
 #### A lost partition can be rebuilt from its lineage
-##### Efficient, and adds little overhead to normal operation
+* Efficient, and adds little overhead to normal operation
 
 ## DataFrames and Datasets
 
 #### DataFrames and Datasets are the primary representation of data in Spark. 
 #### DataFrames represent structured data in a tabular form.
-##### DataFrames model data similar to tables in an RDBMS. 
-##### DataFrames consist of a collection of loosely typed Row objects. 
-##### Rows are organized into columns described by a schema.
+* DataFrames model data similar to tables in an RDBMS. 
+* DataFrames consist of a collection of loosely typed Row objects. 
+* Rows are organized into columns described by a schema.
 #### Datasets represent data as a collection of objects of a specified type.
-##### Datasets are strongly-typed—type checking is enforced at compile time rather than run time.
-##### An associated schema maps object properties to a table-like structure of rows and columns.
-##### Datasets are only defined in Scala and Java.
-##### DataFrameis an alias for Dataset[Row]—Datasets containing Row objects.
-### DataFrameOperaMons: Transformations
-#### Transformations create a new DataFrame based on an existing one
-##### Transformations create a new DataFrame based on an existing one
+* Datasets are strongly-typed—type checking is enforced at compile time rather than run time.
+* An associated schema maps object properties to a table-like structure of rows and columns.
+* Datasets are only defined in Scala and Java.
+* DataFrameis an alias for Dataset[Row]—Datasets containing Row objects.
+* DataFrameOperaMons: Transformations
+* Transformations create a new DataFrame based on an existing one
+* Transformations create a new DataFrame based on an existing one
 #### Transformations do not return any values or data to the driver
-##### Data remains distributed across the application’s executors
+* Data remains distributed across the application’s executors
 #### DataFrames are immutable
-##### Data in a DataFrame is never modified
-##### Use transformations to create a new DataFrame with the data you need
+* Data in a DataFrame is never modified
+* Use transformations to create a new DataFrame with the data you need
 
 ## Apache Hive
 
@@ -98,9 +98,9 @@
 #### “De facto SQL Interface” for Hadoop
 #### Originally developed by Facebook
 #### Original Appeal
-##### Schema on Read
-##### SQL to Map Reduce (Reduce complexity of Map Reduce)
-##### Familiar Programming Context with SQL
+* Schema on Read
+* SQL to Map Reduce (Reduce complexity of Map Reduce)
+* Familiar Programming Context with SQL
 #### It is a data warehouse system for Hadoop
 #### It maintains metadata information about your big data stored on HDFS
 #### Big data can be queried as tables
@@ -108,7 +108,9 @@
 
 ### Distributed Processing Challenges
 #### Shuffle
-##### SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
+´´´
+SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
+´´´
 #### Skew
 ##### SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 #### OrderDistributed

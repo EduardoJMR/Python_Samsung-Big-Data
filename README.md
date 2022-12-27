@@ -2,7 +2,7 @@
 
 ## HDFS
 
-![What is HDFS?](\Users\eduma\OneDrive\Escritorio\Capture.JPG)
+![What is HDFS?](C:\Users\eduma\OneDrive\Escritorio\Capture.JPG)
 
 * Write Once, Read Many times (WORM).
 * Divide files into big blocks and distribute across the cluster.

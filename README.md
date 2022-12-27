@@ -2,7 +2,7 @@
 
 ## HDFS
 
-##### Write Once, Read Many times (WORM).
+* Write Once, Read Many times (WORM).
 ##### Divide files into big blocks and distribute across the cluster.
 ##### Store multiple replicas of each block for reliability.
 ##### Programs can ask "where do the pieces of my file live?”.

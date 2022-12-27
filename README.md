@@ -2,6 +2,8 @@
 
 ## HDFS
 
+![What is HDFS?](\Users\eduma\OneDrive\Escritorio\Capture.JPG)
+
 * Write Once, Read Many times (WORM).
 * Divide files into big blocks and distribute across the cluster.
 * Store multiple replicas of each block for reliability.
@@ -108,9 +110,7 @@
 
 ### Distributed Processing Challenges
 #### Shuffle
-´´´
-SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
-´´´
+##### SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 #### Skew
 ##### SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 #### OrderDistributed
@@ -119,37 +119,37 @@ SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 ## Message Processing with Apache Kafka
 
 #### Apache Kafka is a distributed commit log service
-##### Widely used for data ingest
-##### Conceptually similar to a publish-subscribe messaging system 
-##### Offers scalability, performance, reliability, and flexibility
+* Widely used for data ingest
+* Conceptually similar to a publish-subscribe messaging system 
+* Offers scalability, performance, reliability, and flexibility
 #### Originally created at LinkedIn, now an open source Apache project
-##### Donated to the Apache Software Foundation in 2011
-##### Graduated from the Apache Incubator in 2012
-##### Supported by Cloudera for production use with CDH in 2015
+* Donated to the Apache Software Foundation in 2011
+* Graduated from the Apache Incubator in 2012
+* Supported by Cloudera for production use with CDH in 2015
 ### Key Terminology
 #### Message
-##### A single data record passed by Kafka
-##### Messages in Kafka are variable-size byte arrays
-##### There is no explicit limit on message size
-##### Kafka retains all messages for a defined time period and/or total size
+* A single data record passed by Kafka
+* Messages in Kafka are variable-size byte arrays
+* There is no explicit limit on message size
+* Kafka retains all messages for a defined time period and/or total size
 #### Topic
-##### There is no explicit limit on the number of topics
-##### A topic can be created explicitly or simply by publishing to the topic
-##### A named log or feed of messages within Kafka
+* There is no explicit limit on the number of topics
+* A topic can be created explicitly or simply by publishing to the topic
+* A named log or feed of messages within Kafka
 #### Producer
-##### Producers publish messages to Kafka topics
-##### A program that writes messages to Kafka
+* Producers publish messages to Kafka topics
+* A program that writes messages to Kafka
 #### Consumer
-##### A program that reads messages from Kafka
-##### A consumer reads messages that were published to Kafka topics
-##### Consumer actions do not affect other consumers
-##### They can come and go without impact on the cluster or other consumers
+* A program that reads messages from Kafka
+* A consumer reads messages that were published to Kafka topics
+* Consumer actions do not affect other consumers
+* They can come and go without impact on the cluster or other consumers
 #### Kafka Clusters
-##### A Kafka cluster consists of one or more brokers—servers running the Kafka broker daemon
-##### Kafka depends on the Apache ZooKeeper service for coordination
+* A Kafka cluster consists of one or more brokers—servers running the Kafka broker daemon
+* Kafka depends on the Apache ZooKeeper service for coordination
 ### Zookeeper
 #### Kafka depends on the ZooKeeper service for coordination
-##### Typically running three or five ZooKeeper instances
+* Typically running three or five ZooKeeper instances
 #### Apache ZooKeeper is a coordination service for distributed applications 
 #### Kafka uses ZooKeeper to keep track of brokers running in the cluster 
 #### Kafka uses ZooKeeper to detect the addition or removal of consumers
@@ -162,21 +162,14 @@ SELECT COUNT(*) FROM WHERE GROUP BY ORDER BY
 ##### A single machine can run multiple broker daemons
 ### Topic Replication
 #### At topic creation, a topic can be set with a replication count
-##### Doing so is recommended, as it provides fault tolerance
+* Doing so is recommended, as it provides fault tolerance
 #### Each broker can act as a leader for some topic partitions and a follower for others
-##### Followers passively replicate the leader
-##### If the leader fails, a follower will automatically become the new leader
+* Followers passively replicate the leader
+* If the leader fails, a follower will automatically become the new leader
 ### Messages are Replicated
 #### Configure the producer with a list of one or more brokers
 #### The producer asks the first available broker for the leader of the desired topic partition
 #### The producer then sends the message to the leader
-##### The leader writes the message to its local log
-##### Each follower then writes the message to its own log
-##### After acknowledgements from followers, the message is committed
-
-
-
-
-
-
-
+* The leader writes the message to its local log
+* Each follower then writes the message to its own log
+* After acknowledgements from followers, the message is committed
